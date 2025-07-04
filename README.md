@@ -1,7 +1,9 @@
 ## chatroom
 
-An basic chatroom application written in Go, to explore high performance communication and to handle concurrent client connections.
-It allows multiple clients to connect to a single server and exchange messages in a chat room - think of it like a mini discord , with a single server.
+An basic chatroom application written in Python,
+to explore high performance communication and to handle concurrent client connections.
+It allows multiple clients to connect to a single server and exchange messages in a chat room -
+think of it like a mini discord , with a single server.
 
 ### Key Features:
 
@@ -36,10 +38,3 @@ Session interface manages a client's connection to the chat room. It handles the
 
 Room interface manages the chat room itself. It keeps track of all connected clients, and provides methods for adding and removing clients, and for delivering messages to all participants in the room.
 
-### Build:
-
-- To build and run the project:
-  - Clone the repo.
-  - Install `task` and run as task build to generate the binary
-  - Run `task run server <port>` to start the server , replacing `<port>` with the port number you want to use.
-  - Run `task run client <port>` to start a client, replacing `<port>` with the port number the server is running on.
