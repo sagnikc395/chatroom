@@ -5,7 +5,7 @@ An chatroom application built in Go.
 ### Why ?
 I wanted to understand the building of a conccurent chatroom application to explore in depths the process of concurrent programming and also to deep dive into topics like channels and coroutines.
 
-### High Level Architecture
+### Architecture
 
 #### System Architecture (High Level)
 1. Server -> listens for incoming TCP connections.For every new client, it spins up a goroutine.
