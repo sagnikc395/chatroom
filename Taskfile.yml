@@ -9,5 +9,26 @@ tasks:
   default:
     desc: Print a greeting message
     cmds:
-      - echo "{{.GREETING}}"
+    - echo "{{.GREETING}}"
     silent: true
+
+  build:
+    desc: Build both server and client
+    cmds:
+    - go build -o bin/server ./cmd/server/main.go
+    - go build -o bin/client ./cmd/client/main.go
+
+  server:
+    desc: Run the chat server
+    cmds:
+    - go run ./cmd/server/main.go
+
+  client:
+    desc: Run a chat client
+    cmds:
+    - go run ./cmd/client/main.go
+
+  clean:
+    desc: Remove binary files
+    cmds:
+    - rm -rf bin/
