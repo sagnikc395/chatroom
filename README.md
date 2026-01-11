@@ -1,29 +1,18 @@
-## chatroom
+## chatroom 
 
-An implementation of a chatroom application written in Python,
-to explore the asynchronous I/O module, efficient data structures
-and to handle concurrent client connections.
+An chatroom application built in Go.
 
-It allows multiple clients to connect to a single server
-and exchange messages in a chat room.
+### Why ?
+I wanted to understand the building of a conccurent chatroom application to explore in depths the process of concurrent programming and also to deep dive into topics like channels and coroutines.
 
-### Key Ideas I want to explore :
+### High Level Architecture
 
-- Async I/O with asyncio -> Avoids blocking threads on socket I/O
-- TCP sockets -> Most chat apps use TCP to ensure message delivery.
-- Pub/Sub pattern -> To efficiently broadcast messages.
-- Concurrency -> Using async def , not threads or processes.
-- Scalability -> Later stages can add multiprocessing or a Redis backend.
+#### System Architecture (High Level)
+1. Server -> listens for incoming TCP connections.For every new client, it spins up a goroutine.
+2. Broker / Hub -> A central loop that receives messages ffrom one client and broadcasts them to all others.
+3. Client -> A simple CLI that runs 2 concurrent processes: one to read from `stdin` and send it to the server, and one to listen for incoming messages from the server.
+
+#### Low level System Design 
+TODO! 
 
 
-### Running :
-
-1. Run the server:
-```shell
-python server.py
-```
-
-2. Run the client/(s) :
-```shell
-python client.py
-```
